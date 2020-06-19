@@ -1,0 +1,61 @@
+
+<LoginScreen>:
+          
+    MDBoxLayout:
+        orientation: 'vertical'
+
+     
+        MDLabel:
+            id: titlePanel
+            text: 'Learn ON Play'
+            halign: "center"
+            font_size: 24
+            theme_text_color: "Primary"
+
+        MDTextField:
+            id: login
+            multiline:False
+            hint_text: "User Name"
+            mode: "rectangle"
+            size_hint_x:None
+            width: 300
+            pos_hint:{'center_x':0.5,'center_y':0.5}
+                
+       
+        MDTextField:
+            id: password
+            multiline:False
+            hint_text: "Password"
+            mode: "rectangle"
+            password:True
+            size_hint_x:None
+            width: 300
+            pos_hint:{'center_x':0.5,'center_y':0.5}
+
+        MDBoxLayout:
+        
+            Widget:
+            MDRectangleFlatIconButton:
+                id: loginButton
+                icon:'login'
+                text: 'Login'
+                on_press: root.verify(login.text, password.text)
+                pos_hint:{'center_x':0.5,'center_y':0.5}
+            
+            
+            Widget:
+            MDRectangleFlatIconButton:
+                id: register
+                text: 'Register'
+                icon: 'account-badge'
+                on_press: root.registration(login.text, password.text)
+                pos_hint:{'center_x':0.5,'center_y':0.5}
+            Widget:
+      
+        MDLabel:
+            id: incorrectCredentials
+            text:''
+            font_size: 15
+            theme_text_color: 'Secondary'
+        
+                

@@ -1,0 +1,21 @@
+<Level>:
+    GridLayout:
+        id: levels
+        cols: 3
+        padding: 10, 10
+        spacing: 10, 10
+        size_hint_y: None
+        height: self.minimum_height
+        row_default_height: 150
+    MDIconButton:
+        
+        icon: "presentation-play"
+        pos_hint: {"center_x": .8, "center_y": .8}
+        user_font_size: "64sp"
+        theme_text_color: "Custom"
+        text_color: app.theme_cls.primary_color
+        on_release: root.play()
+    
+    MDBoxLayout:
+        id: player
+

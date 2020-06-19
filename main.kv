@@ -1,0 +1,50 @@
+
+NavigationLayout:
+    id: nav_layout
+
+    ScreenManager:
+
+        
+        Screen:
+
+            BoxLayout:
+                orientation: 'vertical'
+
+            
+                MDToolbar:
+                    title: app.title
+                    elevation: 10
+                    left_action_items: [['menu', lambda x: nav_drawer.set_state()]]
+
+           
+                ScreenManager:
+                    id: screen_manager
+
+   
+    MDNavigationDrawer:
+        id: nav_drawer
+
+        BoxLayout:
+            orientation: 'vertical'
+            padding: "8dp"
+            spacing: "8dp"
+           
+            MDIconButton:
+                icon: 'account-circle'
+                user_font_size: "64sp"
+                pos_hint:{'center_x':0.5,'center_y':0.5}
+
+            MDLabel:
+                id: userNameLabel
+                text: ''
+                font_size: 20
+                pos_hint:{'center_x':0.5,'center_y':0.5}
+                theme_text_color: "Primary"
+
+            ScrollView:
+                MDList:
+                    id: nav_list
+                     
+
+
+   
